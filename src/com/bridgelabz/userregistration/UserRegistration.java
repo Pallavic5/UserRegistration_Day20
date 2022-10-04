@@ -10,6 +10,8 @@ public class UserRegistration {
 		System.out.println(user.isValidFirstName("Pallavi"));
 		System.out.println(user.isValidLastName("Punewar"));
 		System.out.println(user.isValidEmail("pallavic23@gmail.com"));
+		System.out.println(user.isValidEmail("pallavic23@gmail.com"));
+		System.out.println(user.isValidMobile_Number("91 9538463948"));
 	}
 	
 	public boolean isValidFirstName(String name) {
@@ -32,6 +34,14 @@ public class UserRegistration {
 		else
 			throw new UserInputInvalidException("Invalid username: " + email);
 	}
+	
+	public boolean isValidMobile_Number(String mobilenum) {
+		if (UserRegistration.isValidInput(Constants.MOBILE_NUM_REGEX, mobilenum))
+			return true;
+		else
+			throw new UserInputInvalidException("Invalid username: " + mobilenum);
+	}
+
 
 	private static boolean isValidInput(String regex, String userInput) {
 		return Pattern.matches(regex, userInput);

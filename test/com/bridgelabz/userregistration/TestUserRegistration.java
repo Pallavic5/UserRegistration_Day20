@@ -38,6 +38,12 @@ public class TestUserRegistration {
 		assertTrue(user.isValidEmail("pallavic23@gmail.com"));
     }
 	
+	@Test
+	public void testgivenMobileNumber_WhenProper_ShouldReturnTrue_thenHappy() {
+		UserRegistration user = new UserRegistration();
+		assertTrue(user.isValidMobile_Number("919538463948"));
+    }
+	
 	
 
 }
