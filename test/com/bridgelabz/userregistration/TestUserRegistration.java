@@ -31,5 +31,13 @@ public class TestUserRegistration {
 		UserRegistration user = new UserRegistration();
 		assertTrue(user.isValidFirstName("punewar"));
 	}
+	
+	@Test
+	public void testgivenEmail_WhenProper_ShouldReturnTrue_thenHappy() {
+		UserRegistration user = new UserRegistration();
+		assertTrue(user.isValidEmail("pallavic23@gmail.com"));
+    }
+	
+	
 
 }

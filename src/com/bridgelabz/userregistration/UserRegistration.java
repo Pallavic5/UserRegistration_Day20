@@ -9,6 +9,7 @@ public class UserRegistration {
 		UserRegistration user = new UserRegistration();
 		System.out.println(user.isValidFirstName("Pallavi"));
 		System.out.println(user.isValidLastName("Punewar"));
+		System.out.println(user.isValidEmail("pallavic23@gmail.com"));
 	}
 	
 	public boolean isValidFirstName(String name) {
@@ -23,6 +24,13 @@ public class UserRegistration {
 			return true;
 		else
 			throw new UserInputInvalidException("Invalid username: " + name);
+	}
+	
+	public boolean isValidEmail(String email) {
+		if (UserRegistration.isValidInput(Constants.EMAIL_REGEX, email))
+			return true;
+		else
+			throw new UserInputInvalidException("Invalid username: " + email);
 	}
 
 	private static boolean isValidInput(String regex, String userInput) {
