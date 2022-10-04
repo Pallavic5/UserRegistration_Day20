@@ -44,6 +44,12 @@ public class TestUserRegistration {
 		assertTrue(user.isValidMobile_Number("919538463948"));
     }
 	
+	@Test
+	public void testgivenPassword_WhenProper_ShouldReturnTrue_thenHappy() {
+		UserRegistration user = new UserRegistration();
+		assertTrue(user.isValidPassword("pallavic"));
+    }
+	
 	
 
 }

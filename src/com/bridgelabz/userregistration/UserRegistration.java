@@ -12,6 +12,7 @@ public class UserRegistration {
 		System.out.println(user.isValidEmail("pallavic23@gmail.com"));
 		System.out.println(user.isValidEmail("pallavic23@gmail.com"));
 		System.out.println(user.isValidMobile_Number("91 9538463948"));
+		System.out.println(user.isValidPassword("pallavic"));
 	}
 	
 	public boolean isValidFirstName(String name) {
@@ -40,6 +41,13 @@ public class UserRegistration {
 			return true;
 		else
 			throw new UserInputInvalidException("Invalid username: " + mobilenum);
+	}
+	
+	public boolean isValidPassword(String password) {
+		if (UserRegistration.isValidInput(Constants.PASSWORD_REGEX, password))
+			return true;
+		else
+			throw new UserInputInvalidException("Invalid username: " + password);
 	}
 
 
