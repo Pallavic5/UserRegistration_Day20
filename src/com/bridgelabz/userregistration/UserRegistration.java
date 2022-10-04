@@ -7,10 +7,18 @@ import com.bridgelabz.utils.Constants;
 public class UserRegistration {
 	public static void main(String[] args) {
 		UserRegistration user = new UserRegistration();
-		System.out.println(user.isValidFirstName("Ram"));
+		System.out.println(user.isValidFirstName("Pallavi"));
+		System.out.println(user.isValidLastName("Punewar"));
 	}
 	
 	public boolean isValidFirstName(String name) {
+		if (UserRegistration.isValidInput(Constants.FIRST_NAME_REGEX, name))
+			return true;
+		else
+			throw new UserInputInvalidException("Invalid username: " + name);
+	}
+	
+	public boolean isValidLastName(String name) {
 		if (UserRegistration.isValidInput(Constants.FIRST_NAME_REGEX, name))
 			return true;
 		else
