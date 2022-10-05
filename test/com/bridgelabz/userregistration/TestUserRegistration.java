@@ -39,15 +39,33 @@ public class TestUserRegistration {
     }
 	
 	@Test
-	public void testgivenMobileNumber_WhenProper_ShouldReturnTrue_thenHappy() {
+	public void testgivenMobileNumber_WhenProperWithSpace_ShouldReturnTrue_thenHappy() {
 		UserRegistration user = new UserRegistration();
-		assertTrue(user.isValidMobile_Number("919538463948"));
+		assertTrue(user.isValidMobile_Number("91 9538463948"));
+    }
+	
+	@Test(expected = UserInputInvalidException.class)
+	public void testgivenMobileNumber_WhenProperWithOutSpace_ShouldReturnTrue_thenHappy() {
+		UserRegistration user = new UserRegistration();
+		assertTrue(user.isValidMobile_Number("9538463948"));
+    }
+	
+	@Test(expected = UserInputInvalidException.class)
+	public void testgivenMobileNumber_WhenNotProper_ShouldReturnFalse_thenHappy() {
+		UserRegistration user = new UserRegistration();
+		assertTrue(user.isValidMobile_Number("91953"));
     }
 	
 	@Test
 	public void testgivenPassword_WhenProper_ShouldReturnTrue_thenHappy() {
 		UserRegistration user = new UserRegistration();
 		assertTrue(user.isValidPassword("pallavic"));
+    }
+	
+	@Test
+	public void testgivenPassword_WhenHaveAtleastOneUppercaseChar_ShouldReturnTrue_thenHappy() {
+		UserRegistration user = new UserRegistration();
+		assertTrue(user.isValidPassword("pallaviC"));
     }
 	
 	

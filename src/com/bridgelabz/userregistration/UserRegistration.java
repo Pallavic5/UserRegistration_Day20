@@ -12,30 +12,33 @@ public class UserRegistration {
 		System.out.println(user.isValidEmail("pallavic23@gmail.com"));
 		System.out.println(user.isValidEmail("pallavic23@gmail.com"));
 		System.out.println(user.isValidMobile_Number("91 9538463948"));
+		System.out.println(user.isValidMobile_Number_WithoutSpace("9538463948"));
+		System.out.println(user.isValidMobile_Number("91953"));
 		System.out.println(user.isValidPassword("pallavic"));
+		System.out.println(user.isValidPasswordRule2("pallaviC"));
 	}
-	
+
 	public boolean isValidFirstName(String name) {
 		if (UserRegistration.isValidInput(Constants.FIRST_NAME_REGEX, name))
 			return true;
 		else
 			throw new UserInputInvalidException("Invalid username: " + name);
 	}
-	
+
 	public boolean isValidLastName(String name) {
 		if (UserRegistration.isValidInput(Constants.FIRST_NAME_REGEX, name))
 			return true;
 		else
 			throw new UserInputInvalidException("Invalid username: " + name);
 	}
-	
+
 	public boolean isValidEmail(String email) {
 		if (UserRegistration.isValidInput(Constants.EMAIL_REGEX, email))
 			return true;
 		else
 			throw new UserInputInvalidException("Invalid username: " + email);
 	}
-	
+
 	public boolean isValidMobile_Number(String mobilenum) {
 		if (UserRegistration.isValidInput(Constants.MOBILE_NUM_REGEX, mobilenum))
 			return true;
@@ -43,13 +46,26 @@ public class UserRegistration {
 			throw new UserInputInvalidException("Invalid username: " + mobilenum);
 	}
 	
+	public boolean isValidMobile_Number_WithoutSpace(String mobilenum) {
+		if (UserRegistration.isValidInput(Constants.MOBILE_NUM_REGEX_NEW, mobilenum))
+			return true;
+		else
+			throw new UserInputInvalidException("Invalid username: " + mobilenum);
+	}
+
 	public boolean isValidPassword(String password) {
 		if (UserRegistration.isValidInput(Constants.PASSWORD_REGEX, password))
 			return true;
 		else
 			throw new UserInputInvalidException("Invalid username: " + password);
 	}
-
+	
+	public boolean isValidPasswordRule2(String password) {
+		if (UserRegistration.isValidInput(Constants.PASSWORD_REGEX, password))
+			return true;
+		else
+			throw new UserInputInvalidException("Invalid username: " + password);
+	}
 
 	private static boolean isValidInput(String regex, String userInput) {
 		return Pattern.matches(regex, userInput);
