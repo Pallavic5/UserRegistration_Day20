@@ -74,6 +74,12 @@ public class TestUserRegistration {
 		assertTrue(user.isValidPasswordRule3("pallavi4"));
     }
 	
+	@Test
+	public void testgivenPassword_WhenHaveExactlyOneSpecialCharacter_ShouldReturnTrue_thenHappy() {
+		UserRegistration user = new UserRegistration();
+		assertTrue(user.isValidPasswordRule4("pc19NRR@"));
+    }
+	
 	
 
 }

@@ -17,6 +17,7 @@ public class UserRegistration {
 		System.out.println(user.isValidPassword("pallavic"));
 		System.out.println(user.isValidPasswordRule2("pallaviC"));
 		System.out.println(user.isValidPasswordRule3("pallavi4"));
+		System.out.println(user.isValidPasswordRule4("pc19NRR@"));
 	}
 
 	public boolean isValidFirstName(String name) {
@@ -69,6 +70,13 @@ public class UserRegistration {
 	}
 	
 	public boolean isValidPasswordRule3(String password) {
+		if (UserRegistration.isValidInput(Constants.PASSWORD_REGEX, password))
+			return true;
+		else
+			throw new UserInputInvalidException("Invalid username: " + password);
+	}
+	
+	public boolean isValidPasswordRule4(String password) {
 		if (UserRegistration.isValidInput(Constants.PASSWORD_REGEX, password))
 			return true;
 		else
