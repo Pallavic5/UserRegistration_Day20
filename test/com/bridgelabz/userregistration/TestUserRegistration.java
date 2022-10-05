@@ -47,7 +47,7 @@ public class TestUserRegistration {
 	@Test(expected = UserInputInvalidException.class)
 	public void testgivenMobileNumber_WhenProperWithOutSpace_ShouldReturnTrue_thenHappy() {
 		UserRegistration user = new UserRegistration();
-		assertTrue(user.isValidMobile_Number_WithoutSpace("919538463948"));
+		assertTrue(user.isValidMobile_Number_WithoutSpace("9538463948"));
     }
 	
 	@Test(expected = UserInputInvalidException.class)
