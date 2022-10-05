@@ -12,10 +12,11 @@ public class UserRegistration {
 		System.out.println(user.isValidEmail("pallavic23@gmail.com"));
 		System.out.println(user.isValidEmail("pallavic23@gmail.com"));
 		System.out.println(user.isValidMobile_Number("91 9538463948"));
-		System.out.println(user.isValidMobile_Number_WithoutSpace("9538463948"));
+		System.out.println(user.isValidMobile_Number_WithoutSpace("919538463948"));
 		System.out.println(user.isValidMobile_Number("91953"));
 		System.out.println(user.isValidPassword("pallavic"));
 		System.out.println(user.isValidPasswordRule2("pallaviC"));
+		System.out.println(user.isValidPasswordRule3("pallavi4"));
 	}
 
 	public boolean isValidFirstName(String name) {
@@ -61,6 +62,13 @@ public class UserRegistration {
 	}
 	
 	public boolean isValidPasswordRule2(String password) {
+		if (UserRegistration.isValidInput(Constants.PASSWORD_REGEX, password))
+			return true;
+		else
+			throw new UserInputInvalidException("Invalid username: " + password);
+	}
+	
+	public boolean isValidPasswordRule3(String password) {
 		if (UserRegistration.isValidInput(Constants.PASSWORD_REGEX, password))
 			return true;
 		else
