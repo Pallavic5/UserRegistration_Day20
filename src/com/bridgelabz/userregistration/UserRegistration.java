@@ -1,5 +1,6 @@
 package com.bridgelabz.userregistration;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 import com.bridgelabz.exception.UserInputInvalidException;
 import com.bridgelabz.utils.Constants;
@@ -18,6 +19,7 @@ public class UserRegistration {
 		System.out.println(user.isValidPasswordRule2("pallaviC"));
 		System.out.println(user.isValidPasswordRule3("pallavi4"));
 		System.out.println(user.isValidPasswordRule4("pc19NRR@"));
+		System.out.println(user.isValidEmails("abc@yahoo.com"));
 	}
 
 	public boolean isValidFirstName(String name) {
@@ -82,8 +84,27 @@ public class UserRegistration {
 		else
 			throw new UserInputInvalidException("Invalid username: " + password);
 	}
+	
+	public boolean isValidEmails(String email) {
+		if (UserRegistration.isValidInput(Constants.EMAIL_REGEX_PATTERN, email))
+			return true;
+		else
+			throw new UserInputInvalidException("Invalid username: " + email);
+	}
+	
+	ArrayList<String> emailList = new ArrayList<>();
+    public void addEmail(){
+        emailList.add("abc@yahoo.com");
+        emailList.add("abc-100@yahoo.com");
+        emailList.add("abc111@abc.com");
+        emailList.add("abc-100@abc.net");
+        emailList.add("abc.100@abc.com.au");
+        emailList.add("abc@1.com");
+        emailList.add("abc@gmail.com.com");
+        emailList.add("abc@abc+100@gmail.com");
+    }
 
-	private static boolean isValidInput(String regex, String userInput) {
+	public static boolean isValidInput(String regex, String userInput) {
 		return Pattern.matches(regex, userInput);
 	}
 

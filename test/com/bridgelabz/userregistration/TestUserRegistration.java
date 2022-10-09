@@ -80,6 +80,71 @@ public class TestUserRegistration {
 		assertTrue(user.isValidPasswordRule4("pc19NRR@"));
     }
 	
+	  @Test
+	    public void givenEmail1_WhenProper_ShouldReturnTrue() {
+	        UserRegistration userRegistration = new UserRegistration();
+	        userRegistration.addEmail();
+	        boolean email = userRegistration.isValidEmails(userRegistration.emailList.get(0));
+	        assertTrue(email);
+	    }
+
+	    @Test
+	    public void givenEmail2_WhenProper_ShouldReturnTrue() {
+	        UserRegistration userRegistration = new UserRegistration();
+	        userRegistration.addEmail();
+	        boolean email = userRegistration.isValidEmails(userRegistration.emailList.get(1));
+	        assertTrue(email);
+	    }
+
+	    @Test
+	    public void givenEmail3_WhenProper_ShouldReturnTrue() {
+	        UserRegistration userRegistration = new UserRegistration();
+	        userRegistration.addEmail();
+	        boolean email = userRegistration.isValidEmails(userRegistration.emailList.get(2));
+	        assertTrue(email);
+	    }
+
+	    @Test
+	    public void givenEmail4_WhenProper_ShouldReturnTrue() {
+	        UserRegistration userRegistration = new UserRegistration();
+	        userRegistration.addEmail();
+	        boolean email = userRegistration.isValidEmails(userRegistration.emailList.get(3));
+	        assertTrue(email);
+	    }
+
+	    @Test
+	    public void givenEmail5_WhenProper_ShouldReturnTrue() {
+	        UserRegistration userRegistration = new UserRegistration();
+	        userRegistration.addEmail();
+	        boolean email = userRegistration.isValidEmails(userRegistration.emailList.get(4));
+	        assertTrue(email);
+	    }
+
+	    @Test
+	    public void givenEmail6_WhenProper_ShouldReturnTrue() {
+	    	UserRegistration userRegistration = new UserRegistration();
+	        userRegistration.addEmail();
+	        boolean email = userRegistration.isValidEmails(userRegistration.emailList.get(5));
+	        assertTrue(email);
+	    }
+
+	    @Test
+	    public void givenEmail7_WhenProper_ShouldReturnTrue() {
+	        UserRegistration userRegistration = new UserRegistration();
+	        userRegistration.addEmail();
+	        boolean email = userRegistration.isValidEmails(userRegistration.emailList.get(6));
+	        assertTrue(email);
+	    }
+
+	    @Test
+	    public void givenEmail8_WhenProper_ShouldReturnTrue() {
+	        UserRegistration userRegistration = new UserRegistration();
+	        userRegistration.addEmail();
+	        boolean email = userRegistration.isValidEmails(userRegistration.emailList.get(7));
+	        assertTrue(email);
+	    }
+
+	
 	
 
 }
